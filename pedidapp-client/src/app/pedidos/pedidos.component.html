@@ -1,0 +1,43 @@
+
+  <h3>Pedidos</h3>
+  <div class="col-md-12">
+      <span>
+        <!-- Aqui se podria implementar un componente generico de busqueda de usuarios -->
+        <label for="usuario">Usuario</label>
+        <input id="usuario" type="text" size="50" pInputText [(ngModel)]="model.usuario.descripcion"> 
+      </span>
+      <span>
+        <!-- Componente de busqueda de productos (primeros) -->
+        <label for="primero">Primer plato</label>
+        <input id="primero" type="text" size="50" pInputText [(ngModel)]="model.primero.descripcion"> 
+      </span>
+  </div>
+  <div class="col-md-12">
+      <span>
+          <!-- Componente de busqueda de productos (segundos) -->
+        <label for="segundo">Segundo plato</label>
+        <input id="segundo" type="text" size="50" pInputText [(ngModel)]="model.segundo.descripcion"> 
+      </span>
+      <span>
+          <!-- Componente de busqueda de productos (postres) -->
+        <label for="postre">Postre</label>
+        <input id="postre" type="text" size="50" pInputText [(ngModel)]="model.postre.descripcion"> 
+      </span>
+  </div>
+  <button pButton type="button" class="ui-button-success" label="Crear Pedido" (click)="crearPedido()"></button>
+  <div>
+      <table>
+        <tr>
+          <th>Usuario</th>
+          <th>Primer Plato</th>
+          <th>Segundo Plato</th>
+          <th>Postre</th>
+        </tr>
+        <tr *ngFor="let ped of lstPedidos">
+          <td>{{ped.usuario.descripcion}}</td>
+          <td>{{ped.primero.descripcion}}</td>
+          <td>{{ped.segundo.descripcion}}</td>
+          <td>{{ped.postre.descripcion}}</td>
+        </tr>
+      </table>
+  </div>
